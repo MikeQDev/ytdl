@@ -1,0 +1,21 @@
+<html>
+<head>
+<script>
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+	var responseText;
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+    	responseText = xhr.responseText;
+    }
+    if(responseText!=null)
+            alert(responseText);
+}
+xhr.open('GET', 'http://localhost:8080/api/v1/status?sessionToken=08fb8671-bb78-40b2-89d1-e60a92a8eed9', true);
+xhr.send(null);
+</script>
+<body>
+	<br />
+	<br />
+</body>
+
+</html>
