@@ -1,0 +1,12 @@
+.===============================================.
+|=============YTDL  Setup=======================|
+'==============================================='
+.-----------------Dependencies------------------.
+|java... 8?                                     |
+|youtube-dl binary in same directory as ytdl.jar|
+'-----------------------------------------------'
+.~~~~~~~~~~~~~~~~~~Known issues~~~~~~~~~~~~~~~~~~.
+|Problem#1: Status stuck on 'received'           |
+|Fix#1: Ensure that the specified mp3 directory  |
+|EXISTS and you have write access to it          |
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
