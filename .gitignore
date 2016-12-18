@@ -1,3 +1,4 @@
 *.jar
 target/**
-youtube-dl*
+youtube-dl
+youtube-dl.exe
