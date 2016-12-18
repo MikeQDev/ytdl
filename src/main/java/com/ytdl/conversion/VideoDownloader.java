@@ -14,9 +14,12 @@ public class VideoDownloader {
 
 	/**
 	 * 
-	 * @param url YT video url
-	 * @param id id of session
-	 * @param i element of session
+	 * @param url
+	 *            YT video url
+	 * @param id
+	 *            id of session
+	 * @param i
+	 *            element of session
 	 * @return
 	 */
 	public static boolean download(String url, UUID id, int i) {
@@ -28,10 +31,15 @@ public class VideoDownloader {
 		BufferedReader br = null;
 		BufferedReader brE = null;
 		try {
-
+			ProcessBuilder pb = null;
 			// TODO: try doing this with the -o command....
-			ProcessBuilder pb = new ProcessBuilder("youtube-dl", url, "-x", "--audio-format=mp3", "--no-playlist", "-o",
-					YtdlConstants.content_directory + "%(title)s-%(id)s.%(ext)s");
+			if (System.getProperty("os.name").equals("Linux")) {
+				pb = new ProcessBuilder("./youtube-dl", url, "-x", "--audio-format=mp3", "--no-playlist", "-o",
+						YtdlConstants.content_directory + "%(title)s-%(id)s.%(ext)s");
+			} else {
+				pb = new ProcessBuilder("youtube-dl", url, "-x", "--audio-format=mp3", "--no-playlist", "-o",
+						YtdlConstants.content_directory + "%(title)s-%(id)s.%(ext)s");
+			}
 
 			Process proc = pb.start();
 
